@@ -20,6 +20,7 @@
 <th> Product</th> 
 <th>Quantity</th>
 <th>Reservation Date</th>
+<th>Status</th>
 <th>Action</th>
 <tr>
 </thead>
@@ -30,6 +31,7 @@
 <td><%=reserve.product%></td> 
 <td><%=reserve.quantity%></td>
 <td><%=reserve.created_at.strftime("%A,%B/%d/%Y") %></td>
+<td><%=reserve.status %></td>
 <td><%= link_to 'Delete',"/reservation/#{reserve.id}/delete", data: {confirm: 'Are you Sure?'} %></td>
 <!--<td><a href="/reservation/<%=reserve.id%>/delete">Delete</a> </td>-->
 
