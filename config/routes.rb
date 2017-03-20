@@ -90,4 +90,7 @@ get 'reservation', to: 'sites#reservations' #For Admin Reservation Navigation
 get 'reservation/:id/delete', to: 'sites#deletereserve' #For the Delete Action in the Reservation List
 get 'user', to: 'sites#user' #For The User List Admin Navigation
 get 'usershow' , to: 'sites#usershow' #For User Show
+
+get '/reservation/:id/ok', to: 'sites#ok'
+get '/reservation/:id/pend', to: 'sites#pending'
 end
