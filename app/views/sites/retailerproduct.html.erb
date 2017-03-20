@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<% @product.each do |product| %>
+
+<% if product.num_stock !=0  %>
+
+
+<!--CSS-->
+
+
+  <div class="btn-group btn-group-xs-justified-column">
+    <a href="/products/<%=product.id%>" class="thumbnail">
+      <img src="assets/<%=product.image%>" > </a>
+	  
+	  
+		<center>
+	  
+<div class="btn-group btn-group-xs-justified-column" role="group">
+<button><%= link_to 'Reserve',"/retailer/#{product.id}/reserve" %></button>
+</div>
+
+		</center>
+ </div>
+
+
+<!--endCSS-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% end %>
+
+
+<% end %>
+
+
+
+
+
+
+
+

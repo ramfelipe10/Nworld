@@ -1,0 +1,30 @@
+
+
+<div class="container">
+<center>
+
+
+<h3>Retailer's Information</h3>
+<% @user.each do |user| %>
+
+
+Name:<%=user.first%> 
+
+<%=user.middle%>
+
+<%=user.last%><br>
+
+
+Gender:<%=user.sex%><br>
+
+
+Address:<%=user.address%><br>
+
+
+<% end %>
+
+
+<%= link_to 'Back', '/reservation' %>
+
+</div>
+</center>

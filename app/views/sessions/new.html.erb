@@ -1,0 +1,24 @@
+
+<h1>Log In</h1>
+<center>
+<div class="container">
+<img src="http://www.thealphanetworld.com/images/logo.png" width="150" height="30">
+<%= form_tag '/login' do %>
+  <div class='field'>
+  <%= label_tag :username %><br />
+  <%= text_field_tag :username %><br /><br />
+  </div>
+  <div class='field'%>
+  <%= label_tag :password %><br />
+  <%= password_field_tag :password %><br /><br />
+  </div>
+  <%= submit_tag 'Login', class: 'btn btn-success' %>
+<% end %>
+
+</center>
+</div>
+
+
+
+
+

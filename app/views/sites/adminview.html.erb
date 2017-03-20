@@ -1,0 +1,46 @@
+
+
+
+<center><a href="/products/new"> <button>Add New Product</button> </a></center><br>
+<% @product.each do |product| %>
+
+<% if product.num_stock = 0 || product.num_stock > 0%>
+
+
+
+
+
+
+  <div class="btn-group btn-group-xs-justified-column">
+    <a href="/admins/product/<%=product.id%>" class="thumbnail">
+      <img src="assets/<%=product.image%>" > </a>
+	  
+	  
+	  
+	<center>  <div class="btn-group btn-group-xs-justified-column" role="group">
+<button type="button" class="btn btn-default"><%= link_to 'Edit',"/products/#{product.id}/edit" %> 
+<button type="button" class="btn btn-default"><%= link_to 'Delete',"/admins/#{product.id}/admindelete",data: {confirm: 'Are you Sure?'} %>
+
+</div>
+
+</center>
+ </div>
+
+
+
+
+<% end %>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+

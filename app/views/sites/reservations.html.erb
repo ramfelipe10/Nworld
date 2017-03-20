@@ -1,0 +1,48 @@
+
+
+
+<h1>Reservations </h1>
+
+
+<center>
+
+<div class="ucontainer">
+<% if @reservation.empty?  %>
+
+<i>Currently No Product Reservations </i>
+
+
+<%else%>
+<table width="600" style="solid">
+<thead>
+<tr>
+<th> Retailer's Name</th>
+<th> Product</th> 
+<th>Quantity</th>
+<th>Reservation Date</th>
+<th>Action</th>
+<tr>
+</thead>
+<tbody>
+<% @reservation.each do |reserve| %>
+<tr>
+<td><a href="/usershow"><%=reserve.name%></a></td>
+<td><%=reserve.product%></td> 
+<td><%=reserve.quantity%></td>
+<td><%=reserve.created_at.strftime("%A,%B/%d/%Y") %></td>
+<td><%= link_to 'Delete',"/reservation/#{reserve.id}/delete", data: {confirm: 'Are you Sure?'} %></td>
+<!--<td><a href="/reservation/<%=reserve.id%>/delete">Delete</a> </td>-->
+
+</tr>
+<% end %>
+
+</tbody>
+</table>
+<% end %>
+</div>
+
+</center>
+
+
+
+

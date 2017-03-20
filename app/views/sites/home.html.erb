@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<% if session[:user_type] == "admin" %>
+
+
+
+<script type="text/javascript">
+    window.location.href="/adminProduct" 
+</script>
+
+
+
+<% else %>
+
+
+<script type="text/javascript">
+    window.location.href="/homepage" 
+</script>
+
+
+
+<% end %>
+
+
+
