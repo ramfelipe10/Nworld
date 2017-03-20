@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+
+belongs_to:reservations
+
 IMG_SRC=["bubble","ucream","cushion","cloudcream","eyegel"]
 
  validates :name,:srp,:retail_price,:distributor_price,:num_stock,:reserved,:image, presence: true
