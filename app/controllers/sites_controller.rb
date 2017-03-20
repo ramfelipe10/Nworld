@@ -44,6 +44,7 @@ def createreserve #For Posting Data to Reservation DB
 @reservation.name=params[:reservation][:name]
 @reservation.product=params[:reservation][:product]
 @reservation.quantity=params[:reservation][:quantity]
+@reservation.status=params[:reservation][:status]
  respond_to do |format|
       if @reservation.save
         format.html { redirect_to "/product", notice: 'Reservation was successfully created.' }
