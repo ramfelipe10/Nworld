@@ -56,6 +56,21 @@ def createreserve #For Posting Data to Reservation DB
     end
 end
 
+
+def ok
+@reservation=Reservation.find(params[:id])	
+@reservation.update_attribute(:status,"Sent") 
+
+redirect_to '/reservation'
+end
+
+def pending
+@reservation=Reservation.find(params[:id])	
+@reservation.update_attribute(:status,"Pending") 
+
+redirect_to '/reservation'
+end
+
 def userProfile
 @user=User.where(id:session[:user_id])
 end
