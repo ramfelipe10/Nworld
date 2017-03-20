@@ -21,6 +21,7 @@
 <th>Quantity</th>
 <th>Reservation Date</th>
 <th>Status</th>
+<th>Change Status</th>
 <th>Action</th>
 <tr>
 </thead>
@@ -32,7 +33,10 @@
 <td><%=reserve.quantity%></td>
 <td><%=reserve.created_at.strftime("%A,%B/%d/%Y") %></td>
 <td><%=reserve.status %></td>
+<td><button type="button" class="btn btn-default"><%= link_to 'Ok',"/reservation/#{reserve.id}/ok", data: {confirm: 'Are you Sure?'} %></button><button type="button" class="btn btn-default"><%= link_to 'Pending',"/reservation/#{reserve.id}/pend", data: {confirm: 'Are you Sure?'} %></button></td>
 <td><%= link_to 'Delete',"/reservation/#{reserve.id}/delete", data: {confirm: 'Are you Sure?'} %></td>
+
+
 <!--<td><a href="/reservation/<%=reserve.id%>/delete">Delete</a> </td>-->
 
 </tr>
