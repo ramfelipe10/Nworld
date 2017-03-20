@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
 
+has_many :reservations
+has_many :users, through: :reservations
+
 belongs_to:reservations
 
 IMG_SRC=["bubble","ucream","cushion","cloudcream","eyegel"]
