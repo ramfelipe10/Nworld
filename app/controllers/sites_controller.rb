@@ -32,6 +32,7 @@ def reserve   #Reserve Buttton to Reservation Form
 @reservation=Reservation.new
 @product=Product.find(params[:id])
 @usern= current_user.first ,current_user.last
+@uname= current_user.id
 end
 
 
@@ -116,7 +117,8 @@ end
 
 def usershow
 
-@user=User.where(first:'Den')
+
+
 
 
 end
