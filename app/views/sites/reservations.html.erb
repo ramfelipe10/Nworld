@@ -1,18 +1,27 @@
 
-
+<center>
+<div class="ucontainer">
 
 <h1>Reservations </h1>
 
-
-<center>
-
-<div class="ucontainer">
 <% if @reservation.empty?  %>
 
 <i>Currently No Product Reservations </i>
 
-
 <%else%>
+
+<!--Search-->
+<%= form_tag "/reservation/find" do %>
+<%= text_field_tag :search_string,"", placeholder: "Search For Name "%>
+<%= submit_tag :search%>
+<% end %>
+<!--SearchEnd--><br><Br>
+
+
+ 
+<button><a href="/listofOk">Cleared</a></button>
+<button><a href="/listofPending">Pending</a></button><br><br>
+
 <table width="600" style="solid">
 <thead>
 <tr>
@@ -30,7 +39,7 @@
 <% @reservation.each do |reserve| %>
 <tr>
 
-<td><a href="/usershow/<%=reserve.id%>/show"><%=reserve.name%></a></td>
+<td><%=reserve.name%></a></td>
 <td><%=reserve.product%></td> 
 <td><%=reserve.quantity%></td>
 <td><%=reserve.created_at.strftime("%A,%B/%d/%Y") %></td>
@@ -47,6 +56,8 @@
 </tbody>
 </table>
 <% end %>
+
+
 </div>
 
 </center>

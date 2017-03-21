@@ -3,7 +3,8 @@ class SitesController < ApplicationController
  before_action :set_user, only: [:show, :edit, :update, :destroy]
  before_action :require_user, only: [:reserve, :createreserve, :home, :_adminview]
 
- layout 'admin', :only => [:adminview, :reservations, :user, :adminshow]
+ #layout false for not rendering the App layout as default
+ layout 'admin', :only => [:adminview, :reservations, :user, :adminshow, :showok, :showpending]
 
 #For Both Retailer and Admin Navigation 
  
@@ -47,7 +48,6 @@ def createreserve #For Posting Data to Reservation DB
 @reservation.product=params[:reservation][:product]
 @reservation.product_id=params[:reservation][:product_id]
 @reservation.quantity=params[:reservation][:quantity]
-@reservation.user_id=params[:reservation][:user_id]
 @reservation.status=params[:reservation][:status]
  respond_to do |format|
       if @reservation.save
@@ -118,13 +118,20 @@ redirect_to '/reservation'
 	
 end
 
-def usershow
+def showok
+@reservation=Reservation.where(status:"Sent")
+render 'reservations'
+end
 
+def showpending
+@reservation=Reservation.where(status:"Pending")
+render 'reservations'
+end
 
-@reservation=Reservation.find(params[:id])
-
-
-
+def find #SearchBar in Reservation List
+@result=  "%" +params[:search_string] + "%" 
+@reservation=Reservation.where('name LIKE ?',@result)
+render 'reservations'
 end
 
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   #resources :users, only: [:show, :create, :edit, :update]
   resources :users, except: [:index]
-  resources :reservations
+  resources :reservations, except: [:index]
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -89,8 +89,15 @@ get 'admins/:id/admindelete', to: 'sites#admindelete' #For Admin To delete Produ
 get 'reservation', to: 'sites#reservations' #For Admin Reservation Navigation
 get 'reservation/:id/delete', to: 'sites#deletereserve' #For the Delete Action in the Reservation List
 get 'user', to: 'sites#user' #For The User List Admin Navigation
-get 'usershow/:id/show' , to: 'sites#usershow' #For User Show
 
-get '/reservation/:id/ok', to: 'sites#ok'
+get '/reservation/:id/ok', to: 'sites#ok' #Both For Changing Status
 get '/reservation/:id/pend', to: 'sites#pending'
+
+
+get 'listofOk', to: 'sites#showok'#Both For Grouping list
+get 'listofPending', to: 'sites#showpending'
+
+post '/reservation/find', to: 'sites#find'
+
+
 end
