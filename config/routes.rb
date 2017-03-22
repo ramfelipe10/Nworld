@@ -100,4 +100,7 @@ get 'listofPending', to: 'sites#showpending'
 post '/reservation/find', to: 'sites#find'
 
 
+get '/user/:id/delete', to: 'sites#deleteuser' #For Deleting Nworld User
+
+
 end

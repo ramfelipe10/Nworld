@@ -8,6 +8,20 @@
 
 
 
+
+.box { 
+    background: white; 
+    border: 1px double #DDD; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px #333; 
+    color: #666; 
+    outline: none; 
+    height:25px; 
+    width: 275px; 
+	text-align:center;
+  } 
+
+
 .footer {
     position:fixed;
 	 width:100%;
@@ -17,6 +31,23 @@
 body {
   background: #E1E8EB;
 }
+
+body.background {
+     background: url('bg.jpg');
+
+  }
+  
+  body.login {
+     background: url('login.jpg');
+
+  }
+  
+  
+  
+   body.retailerbg {
+     background: url('products.jpg');
+
+  }
 
 h1 {
   color: #0000;

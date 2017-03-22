@@ -18,7 +18,7 @@ end
   
   def require_user
   if !logged_in?
-    flash[:error] = "Must be logged in to do that."
+    flash[:error] = "Login Required!"
     redirect_to '/login'
   end
 end

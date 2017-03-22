@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :require_user, except: [:show]
   
   layout 'admin', :only => [:edit]
+ 
 
   # GET /products
   # GET /products.json

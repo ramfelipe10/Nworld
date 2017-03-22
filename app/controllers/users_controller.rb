@@ -38,7 +38,7 @@ class UsersController < ApplicationController
    if @user.save
   session[:user_id] = @user.id  # to automatically login a user that signed up
 session[:user_type] = @user.account_type #For SPecific Rendering Landing Page
-    flash[:notice] = "You are registered."
+    flash[:notice] = "Welcome To Nworld! You are now registered."
     redirect_to '/home'
 	else
     render :new
@@ -52,7 +52,7 @@ session[:user_type] = @user.account_type #For SPecific Rendering Landing Page
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'User Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+layout 'login', :only => [:new]
+
  def new
 
   end
@@ -12,7 +14,7 @@ def create
     flash[:notice] = "Welcome, you've logged in."
     redirect_to '/home'
   else
-    flash[:error] = "There is something wrong with your username or password!"
+    flash[:error] = "Invalid username or password!"
     redirect_to login_path
   end
 end
@@ -20,7 +22,7 @@ end
 def destroy
   session[:user_id] = nil 
   flash[:notice] = "You've logged out."
-  redirect_to '/home'
+  redirect_to '/homepage'
 end
 
 end
