@@ -12,7 +12,7 @@ def create
     flash[:notice] = "Welcome, you've logged in."
     redirect_to '/home'
   else
-    flash[:error] = "There is something wrong with your username or password."
+    flash[:error] = "There is something wrong with your username or password!"
     redirect_to login_path
   end
 end

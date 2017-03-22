@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
 
  before_action :set_user, only: [:show, :edit, :update, :destroy]
- before_action :require_user, only: [:reserve, :createreserve, :home, :_adminview]
+ before_action :require_user, only: [:reserve, :createreserve, :adminview]
 
  #layout false for not rendering the App layout as default
  layout 'admin', :only => [:adminview, :reservations, :user, :adminshow, :showok, :showpending,:find]
@@ -12,7 +12,13 @@ def home
 
  @account_type = session[:user_type]
  
- @product=Product.all
+# @product=Product.all
+      
+end
+
+def retailerhome
+
+
       
 end
 
@@ -103,7 +109,9 @@ end
 def admindelete #for deleting a product
 @product=Product.find(params[:id])
 @product.destroy
+flash[:notice] = "Product Successfuly Deleted"
 redirect_to '/home'
+
 end
 
 def reservations  #For the Reservation List in Admin Navigation

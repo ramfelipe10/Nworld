@@ -1,5 +1,10 @@
-<p id="notice"><%= notice %></p>
+
+
 <% if session[:user_type] == "admin" %>
+
+<% if notice %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
 
 
 
@@ -8,12 +13,19 @@
 </script>
 
 
-<% else %>
+<% elsif session[:user_type] == "retailer"  %>
+
+<% if notice %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
 
 
 <script type="text/javascript">
     window.location.href="/homepage" 
 </script>
+
+
+
 
 
 

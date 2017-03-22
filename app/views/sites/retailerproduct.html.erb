@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
+
+<% if notice %>
+    <p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
+
 
 <% @product.each do |product| %>
 

@@ -1,5 +1,10 @@
 
+<% if notice %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
 
+
+<b><center><font color="red"><p class="alert"><%= flash[:error] %></p></font></center></b>
 
 <center><a href="/products/new"> <button>Add New Product</button> </a></center><br>
 <% @product.each do |product| %>

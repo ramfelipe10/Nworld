@@ -10,4 +10,6 @@ validates :first, :middle, :last, :sex, :address, presence: true
 
 
 
+
+
 end
