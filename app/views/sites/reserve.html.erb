@@ -42,7 +42,7 @@ Error!
 <%= f.hidden_field :status, value:("Pending") %>
 
 <%= f.label :"Quantity (Dozen)"%><br>
-<%= f.number_field :quantity %><br><br>
+<%= f.number_field :quantity , :class=> 'box', :placeholder=> 'Positive Integer' %><br><br>
 
 	
 <%= f.submit 'Reserve' , data: { confirm: 'Are you Sure?' } %><br>
