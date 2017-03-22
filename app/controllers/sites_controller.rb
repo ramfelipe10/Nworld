@@ -124,6 +124,7 @@ def deletereserve  #For delete Action in the Reservation List
 		
 @reservation=Reservation.find(params[:id])
 @reservation.destroy
+flash[:notice] = "Reservation Successfuly Deleted"
 redirect_to '/reservation'
 	
 end
@@ -144,6 +145,12 @@ def find #SearchBar in Reservation List
 render 'reservations'
 end
 
+def deleteuser #For Deleting a Nworld User
+@user=User.find(params[:id])
+@user.destroy
+flash[:notice] = "User Successfuly Deleted"
+redirect_to '/user'
+end
 
 
 

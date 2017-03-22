@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="background">
 
 
 
@@ -45,7 +45,7 @@
       <ul class="nav navbar-nav navbar-right ">
   
 	 <% if logged_in? %>
- <li><a href=""><%= current_user.first %> <%= current_user.last %></a></li>
+ <li><a href="#"><%= current_user.first %> <%= current_user.last %></a></li>
   <li> <%= link_to "Logout", "/logout", :class => ''  %>  <li>
 <% else %>
  <li> <%= link_to "Sign up", "/register", :class => ''  %>  </li>

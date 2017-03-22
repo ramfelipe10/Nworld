@@ -2,9 +2,7 @@
 
 <% if session[:user_type] == "admin" %>
 
-<% if notice %>
-<p class="alert alert-success"><%= flash[:notice] %></p>
-<% end %>
+
 
 
 
@@ -15,9 +13,6 @@
 
 <% elsif session[:user_type] == "retailer"  %>
 
-<% if notice %>
-<p class="alert alert-success"><%= flash[:notice] %></p>
-<% end %>
 
 
 <script type="text/javascript">
