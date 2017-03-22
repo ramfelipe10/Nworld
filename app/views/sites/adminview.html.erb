@@ -4,7 +4,7 @@
 <center><a href="/products/new"> <button>Add New Product</button> </a></center><br>
 <% @product.each do |product| %>
 
-<% if product.num_stock = 0 || product.num_stock > 0%>
+<% if product.num_stock >= 0%>
 
 
 
