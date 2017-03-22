@@ -5,6 +5,7 @@ class SitesController < ApplicationController
 
  #layout false for not rendering the App layout as default
  layout 'admin', :only => [:adminview, :reservations, :user, :adminshow, :showok, :showpending,:find]
+ #layout 'retailerproduct', :only => [:retailerproduct,:reserve,:userProfile]
 
 #For Both Retailer and Admin Navigation 
  
