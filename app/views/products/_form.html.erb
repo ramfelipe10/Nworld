@@ -35,10 +35,13 @@ Error!
     <%= f.label :num_stock %><br>
     <%= f.number_field :num_stock %>
   </div>
+  <%= f.hidden_field :reserved, value:(0) %>
+  <!--
   <div class="field">
     <%= f.label :reserved %><br>
     <%= f.number_field :reserved %>
   </div>
+  -->
   <div class="field">
     <%= f.label :image %><br>
    <!-- <%= f.text_field :image %> -->

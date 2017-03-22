@@ -49,6 +49,7 @@ def createreserve #For Posting Data to Reservation DB
 
 @reservation=Reservation.new
 @product=Product.find(params[:id])#For Rendering
+
 @usern= current_user.first ,current_user.last #For Rendering
 @reservation.name=params[:reservation][:name]
 @reservation.product=params[:reservation][:product]
@@ -57,6 +58,7 @@ def createreserve #For Posting Data to Reservation DB
 @reservation.status=params[:reservation][:status]
  respond_to do |format|
       if @reservation.save
+      	#@product.reserved = @product.reserved + @reservation.quantity
         format.html { redirect_to "/product", notice: 'Reservation was successfully created.' }
   
       else

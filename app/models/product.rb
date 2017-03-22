@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-
+	belongs_to :user
 
 
 IMG_SRC=["bubble","ucream","cushion","cloudcream","eyegel"]
