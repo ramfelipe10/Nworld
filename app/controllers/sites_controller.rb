@@ -4,7 +4,7 @@ class SitesController < ApplicationController
  before_action :require_user, only: [:reserve, :createreserve, :home, :_adminview]
 
  #layout false for not rendering the App layout as default
- layout 'admin', :only => [:adminview, :reservations, :user, :adminshow, :showok, :showpending]
+ layout 'admin', :only => [:adminview, :reservations, :user, :adminshow, :showok, :showpending,:find]
 
 #For Both Retailer and Admin Navigation 
  
