@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #resources :users, only: [:show, :create, :edit, :update]
   resources :users, except: [:index]
   resources :reservations, except: [:index]
-  resources :products
+  resources :products, except: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

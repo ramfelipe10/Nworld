@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-layout 'login', :only => [:new]
+#layout 'login', :only => [:new]
 
  def new
 

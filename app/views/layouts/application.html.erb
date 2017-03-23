@@ -16,13 +16,17 @@
 
  <div class="header">
       <div>
-        <a href="/home" id="logo"><img src="assets/logo.png" alt="logo"/></a>
+       <!-- <a href="/homepage" id="logo"><img src="assets/logo.png" alt="logo"/></a>-->
+		
+		 <a class="navbar-brand" href=""><span><img src="assets/logo.png" width="130" height="26"></span></a>
       </div>
       <div id="navigation">
         <ul>
-           <li ><a href="/home">Home <span class="sr-only">(current)</span></a></li>
+           <li ><a href="/homepage">Home <span class="sr-only">(current)</span></a></li>
           <li ><a href="/about">About <span class="sr-only">(current)</span></a></li>
           <li ><a href="/product">Products <span class="sr-only">(current)</span></a></li>
+		  
+		  
           <% if logged_in? %>
           <li><a href="/profile"><%= current_user.first %> <%= current_user.last %></a></li>
           <li> <%= link_to "Edit Profile", "/users/#{current_user.id}/edit", :class => ''  %>  <li>
@@ -31,6 +35,8 @@
           <li> <%= link_to "Sign up", "/register", :class => ''  %>  </li>
           <li><%= link_to "Login", "/login", :class => ''  %> </li>
           <% end %>
+		  
+		  
         </ul>
        </div>
      </div> 
