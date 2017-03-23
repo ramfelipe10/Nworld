@@ -10,12 +10,12 @@ STEPS IN USING THE SYSTEM:
 =>rake db:setup (important)
 
 • You can sign in as admin using this info
-username: juand123
-password: juan234
+=>username: juand123
+=>password: juan234
 
 • You can sign in as retailer using this info
-username: nikitforn
-password: nikitay
+=>username: nikitforn
+=>password: nikitay
 
 Things you may want to cover:
 
