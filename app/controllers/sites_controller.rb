@@ -59,7 +59,7 @@ def createreserve #For Posting Data to Reservation DB
  respond_to do |format|
       if @reservation.save
 
-        format.html { redirect_to "/product", notice: "Reservation was successfully created #{$global_reserved}." }
+        format.html { redirect_to "/product", notice: "Reservation was successfully created." }
   
       else
         format.html { render :reserve }
