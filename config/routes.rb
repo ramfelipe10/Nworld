@@ -62,7 +62,7 @@ Rails.application.routes.draw do
   
   
   
-root 'sites#home' 
+root 'sites#retailerhome' 
  
   get '/register', to: 'users#new'
   get '/login', to: 'sessions#new'
