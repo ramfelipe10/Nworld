@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nworld</title>
+  <title>Project</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags %><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Her Designs</title>
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
   
   <link rel="shortcut icon" href="assets/nworld.ico" type="image/x-icon">
 <link rel="icon" href="assets/nworld.ico" type="image/x-icon">
 </head>
-<body class="retailerbg">
+<body>
 
 
+ <div class="header">
+      <div>
+        <a href="/home" id="logo"><img src="assets/logo.png" alt="logo"/></a>
+      </div>
+      <div id="navigation">
+        <ul>
+           <li ><a href="/home">Home <span class="sr-only">(current)</span></a></li>
+          <li ><a href="/about">About <span class="sr-only">(current)</span></a></li>
+          <li ><a href="/product">Products <span class="sr-only">(current)</span></a></li>
+          <% if logged_in? %>
+          <li><a href="/profile"><%= current_user.first %> <%= current_user.last %></a></li>
+          <li> <%= link_to "Edit Profile", "/users/#{current_user.id}/edit", :class => ''  %>  <li>
+          <li> <%= link_to "Logout", "/logout", :class => ''  %>  <li>
+          <% else %>
+          <li> <%= link_to "Sign up", "/register", :class => ''  %>  </li>
+          <li><%= link_to "Login", "/login", :class => ''  %> </li>
+          <% end %>
+        </ul>
+       </div>
+     </div> 
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href=""><span><img src="http://www.thealphanetworld.com/images/logo.png" width="130" height="26"></span></a>
-	
+    <%= yield %>
+    <br><br><br><br>
+    <center>
+    <div class="#">
+      <p>&#169; 2017 Nlighten. All Rights Reserved.</p>
     </div>
+<<<<<<< HEAD
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -92,3 +107,6 @@
 				 </div> 
 				 </div>
 </html>
+=======
+    </center>
+>>>>>>> origin/master
