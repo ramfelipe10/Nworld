@@ -2,7 +2,7 @@ class SitesController < ApplicationController
 
  before_action :set_user, only: [:show, :edit, :update, :destroy]
  before_action :require_user, only: [:reserve, :createreserve, :adminview]
-
+#layout false
  #layout false for not rendering the App layout as default
  layout 'admin', :only => [:adminview, :reservations, :user, :adminshow, :showok, :showpending,:find]
  #layout 'retailerproduct', :only => [:retailerproduct,:reserve,:userProfile]

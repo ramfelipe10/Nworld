@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:show]
   
-  layout 'admin', :only => [:edit]
+  layout 'admin', :only => [:edit, :new]
  
 
   # GET /products
